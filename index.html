@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF9F5">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lingo AI">
+<title>Lingo AI</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+ <symbol id="i-send" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="app chat-app">
+  <header class="top">
+    <div class="logo"><span class="spark">✺</span><b>Lingo</b> <span class="ai-badge">AI</span></div>
+    <p class="tag">Нейросеть</p>
+    <button class="theme" id="theme" aria-label="Тема">◐</button>
+    <button class="theme gear" id="btnNew" aria-label="Новый чат" title="Новый чат">＋</button>
+  </header>
+
+  <div class="diag card" id="diag" hidden></div>
+
+  <main class="chat-main" id="chatMain">
+    <div class="welcome card" id="welcome">
+      <div class="bubble"><span style="font-size:28px">✦</span></div>
+      <h2>Привет, я Lingo AI</h2>
+      <p>Задай вопрос — отвечу нейросетью. Если не работает, нажми «Проверить связь».</p>
+      <div class="suggestions" id="suggestions">
+        <button type="button" data-q="Привет! Кто ты?">Кто ты?</button>
+        <button type="button" data-q="Объясни простыми словами, что такое нейросеть">Что такое нейросеть?</button>
+        <button type="button" data-q="Напиши короткое мотивационное сообщение">Мотивация</button>
+        <button type="button" id="btnTest" style="border-color:var(--or);color:var(--or2)">Проверить связь</button>
+      </div>
+    </div>
+    <div class="messages" id="messages" hidden></div>
+  </main>
+
+  <footer class="composer">
+    <div class="composer-inner card">
+      <textarea id="input" rows="1" placeholder="Напиши сообщение…" enterkeyhint="send"></textarea>
+      <button class="btn primary send" id="send" aria-label="Отправить"><svg><use href="#i-send"/></svg></button>
+    </div>
+    <p class="hint" id="hint">Сначала открой через GitHub Pages или npx serve — не с диска</p>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
